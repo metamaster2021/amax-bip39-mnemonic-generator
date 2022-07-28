@@ -1,4 +1,4 @@
-# eos-bip39-mnemonic-generator
+# amax-bip39-mnemonic-generator
 
 EOS BIP39 Public/Private Key Generator
 
@@ -24,8 +24,8 @@ Thanks to:
 
 ## Install
 
-1. `git clone https://github.com/rudijs/eos-bip39-mnemonic-generator.git`
-2. `cd eos-bip39-mnemonic-generator`
+1. `git clone https://github.com/rudijs/amax-bip39-mnemonic-generator.git`
+2. `cd amax-bip39-mnemonic-generator`
 3. `npm install`
 
 ## Usage
@@ -45,4 +45,4 @@ Examples:
 1. `node wallet.js`
 2. `node wallet.js --count 1`
 
-![EOS BIP39 Examples](docs/images/eos-bip39-examples.png)
+![EOS BIP39 Examples](docs/images/amax-bip39-examples.png)

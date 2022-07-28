@@ -15,7 +15,14 @@ createEosKeyFromEthKey(ethAddressList);
 
 function generateAddressesFromSeed(seed, count) {
   const hdwallet = hdkey.fromMasterSeed(bip39.mnemonicToSeed(seed));
-  const wallet_hdpath = "m/44'/60'/0'/0/";
+  // amax coin type: 1048576
+  // Coin type is defined at SLIP44
+  // - https://github.com/satoshilabs/slips/blob/master/slip-0044.md
+  var wallet_hdpath = "m/44'/1048576'/0'/0/";
+  if (argv.hdpath) {
+    wallet_hdpath = argv.hdpath
+  }
+  console.log(`\nUsing HDPATH ${wallet_hdpath}`);
   const accounts = [];
 
   for (let i = 0; i < count; i++) {
@@ -49,7 +56,7 @@ function createEosKeyFromEthKey(ethAddressList) {
         .toWif();
 
       const convertedEOSPrivateKey = eosWIF;
-      const convertedEOSPublicKey = ecc.privateToPublic(eosWIF);
+      const convertedEOSPublicKey = ecc.privateToPublic(eosWIF, "AM");
 
       console.log(`\nEOS Public Key ${index + 1}: ${convertedEOSPublicKey}`);
       console.log(`EOS Private Key ${index + 1}: ${convertedEOSPrivateKey}`);
